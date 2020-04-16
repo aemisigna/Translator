@@ -1,0 +1,4 @@
+name: Translator
+author: MelonDev
+version: ${project.version}
+main: me.melondev.translator.TranslatorPlugin
