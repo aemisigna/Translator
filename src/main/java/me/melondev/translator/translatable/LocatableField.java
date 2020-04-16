@@ -6,11 +6,13 @@ import me.melondev.translator.locale.Language;
 import me.melondev.translator.translatable.exception.LanguageFileNotFoundException;
 import org.yaml.snakeyaml.Yaml;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Map;
+import java.util.logging.Level;
 
 public final class LocatableField {
 
@@ -28,7 +30,7 @@ public final class LocatableField {
         InputStream is;
 
         try {
-            is = Files.newInputStream( Paths.get(translatorPlugin.getDataFolder() + "/" + language + ".yml"));
+            is = Files.newInputStream(Paths.get(translatorPlugin.getDataFolder() + File.separator + language.getDisplay() + ".yml"));
         } catch (IOException e) {
             throw new LanguageFileNotFoundException(String.format(ERROR_FILE_NOT_FOUND, language.getDisplay()));
         }

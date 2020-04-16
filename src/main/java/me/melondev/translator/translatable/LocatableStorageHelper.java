@@ -5,6 +5,8 @@ import me.melondev.translator.locale.Language;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
 import java.util.logging.Level;
 import java.util.stream.Stream;
 
@@ -36,13 +38,14 @@ public final class LocatableStorageHelper implements ILocatableStorageHelper {
         if (!translatorPlugin.getDataFolder().exists()) translatorPlugin.getDataFolder().mkdir();
         if (!langFile.exists()) {
             try {
-                langFile.createNewFile();
+                final InputStream inputStream = translatorPlugin.getResource(language.getDisplay() + ".yml");
+                Files.copy(inputStream, langFile.getAbsoluteFile().toPath());
             } catch (IOException e) {
                 e.printStackTrace();
                 translatorPlugin.getLogger().log(Level.SEVERE, "An error has ocurred while creating yaml file for " + language.getDisplay() + ".yml");
             }
         }
 
-        translatorPlugin.getLogger().log(Level.SEVERE, "Created yaml file for " + language.getDisplay() + ": " + langFile.getName());
+        translatorPlugin.getLogger().log(Level.INFO, "Loaded yaml file for " + language + ": " + langFile.getName());
     }
 }
