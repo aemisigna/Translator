@@ -30,7 +30,7 @@ public final class TranslatorPlugin extends JavaPlugin {
     public void onEnable() {
         translatorPlugin = this;
 
-        this.getLogger().log(Level.INFO, "Que pasa con loh pibeh ñeriiiii");
+        this.getLogger().log(Level.INFO, "Que pasa con loh pibeh ñeriiii");
 
         this.locatableStorageHelper = new LocatableStorageHelper(this);
         this.locatableField = new LocatableField(this, new Yaml());
