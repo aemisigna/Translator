@@ -2,6 +2,7 @@ package me.melondev.translator.listener;
 
 import me.melondev.translator.TranslatorAPI;
 import me.melondev.translator.locale.Language;
+import me.melondev.translator.provider.placeholder.FieldPlaceholder;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -21,5 +22,10 @@ public final class TestListener implements Listener {
                 TranslatorAPI.getPlayerTranslatedField(event.getPlayer(), Language.SPANISH, "test"));
         event.getPlayer().sendMessage("Inglich: " +
                 TranslatorAPI.getPlayerTranslatedField(event.getPlayer(), Language.ENGLISH, "test"));
+
+        final FieldPlaceholder testPlaceholder = new FieldPlaceholder("melon", "watermelon");
+        event.getPlayer().sendMessage("Placeholder en inclich: " +
+                TranslatorAPI.getPlaceholderTranslatedField(Language.ENGLISH, testPlaceholder, "testtest")
+                );
     }
 }

@@ -1,1 +1,10 @@
 test: 'Bing is my bae, I am %%player_name%%'
+
+#############
+# You can create custom placeholders using a FieldPlaceholder instance
+# and the #getPlaceholderTranslatedField method.
+#
+# Example placeholder: %%melon%% will result in 'watermelon'.
+# Code: final FieldPlaceholder testPlaceholder = new FieldPlaceholder("melon", "watermelon");
+#############
+testtest: 'Placeholder test: (Placeholder: melon) %%melon%%'

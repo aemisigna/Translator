@@ -2,6 +2,7 @@ package me.melondev.translator.provider;
 
 import me.melondev.translator.TranslatorPlugin;
 import me.melondev.translator.locale.Language;
+import me.melondev.translator.provider.placeholder.FieldPlaceholder;
 import me.melondev.translator.provider.placeholder.PlaceholderParser;
 import me.melondev.translator.translatable.exception.LanguageFileNotFoundException;
 import org.bukkit.entity.Player;
@@ -38,6 +39,16 @@ public final class TranslatedFieldProvider implements ITranslatedFieldProvider {
         } catch (LanguageFileNotFoundException e) {
             translatorPlugin.getLogger().log(Level.SEVERE, "An error has ocurred while getting field " + field + " for language " + language.getDisplay());
             return field + " (#getPlayerField | File not found: " + language.getDisplay() + ")";
+        }
+    }
+
+    @Override
+    public String getPlaceholderField(final Language language, final FieldPlaceholder fieldPlaceholder, final String field) {
+        try {
+            return PlaceholderParser.transformVariables(translatorPlugin.getLocatableField().getFieldFromFile(language, field), fieldPlaceholder);
+        } catch (LanguageFileNotFoundException e) {
+            translatorPlugin.getLogger().log(Level.SEVERE, "An error has ocurred while getting field " + field + " for language " + language.getDisplay());
+            return field + " (#getPlaceholderField | File not found: " + language.getDisplay() + ")";
         }
     }
 }
