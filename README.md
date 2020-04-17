@@ -28,4 +28,4 @@ TranslatorAPI.getPlaceholderTranslatedField(Language.ENGLISH, testPlaceholder, "
 
 ## License
 
-This project is licensed under the MIT License. - [LICENSE.md](https://github.com/mel0nsandia/Translator/LICENSE.md)
+This project is licensed under the MIT License. - [LICENSE.md](https://github.com/mel0nsandia/Translator/blob/master/LICENSE.md)
