@@ -1,7 +1,7 @@
 # Translator
 Multi language plugin for Minecraft Server 1.8.8
 
-Demostration project for Seocraft Network Development group.
+Demostration project.
 
 ## API Usage
 ### Translated field without Player data
