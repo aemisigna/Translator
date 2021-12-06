@@ -15,7 +15,7 @@ TranslatorAPI.getPlayerTranslatedField(Player, Language.ENGLISH, "languageFileFi
 ```
 
 ### Custom placeholder support
-For custom placeholder support you must create an custom [FieldPlaceholder.java](https://github.com/mel0nsandia/Translator/blob/master/src/main/java/me/melondev/translator/provider/placeholder/FieldPlaceholder.java) object & implement it using [TranslatorAPI.java](https://github.com/mel0nsandia/Translator/blob/master/src/main/java/me/melondev/translator/TranslatorAPI.java)
+For custom placeholder support you must create an custom [FieldPlaceholder.java](https://github.com/veir1/Translator/blob/master/src/main/java/me/melondev/translator/provider/placeholder/FieldPlaceholder.java) object & implement it using [TranslatorAPI.java](https://github.com/veir1/Translator/blob/master/src/main/java/me/melondev/translator/TranslatorAPI.java)
 ```
 final FieldPlaceholder testPlaceholder = new FieldPlaceholder("placeholder", "replacement");
 
@@ -24,8 +24,8 @@ TranslatorAPI.getPlaceholderTranslatedField(Language.ENGLISH, testPlaceholder, "
 
 ## Author
 
-* **Jeremías Aubriot** - *Main work* - [mel0nsandia](https://github.com/mel0nsandia)
+* **Jeremías Aubriot** - *Main work* - [veir1](https://github.com/veir1)
 
 ## License
 
-This project is licensed under the MIT License. - [LICENSE.md](https://github.com/mel0nsandia/Translator/blob/master/LICENSE.md)
+This project is licensed under the MIT License. - [LICENSE.md](https://github.com/veir1/Translator/blob/master/LICENSE.md)
